@@ -15,7 +15,7 @@
         "install:browsers": "playwright install"
     },
     "keywords": [],
-    "author": "",
+    "author": "Khoa Nguyen",
     "license": "ISC",
     "devDependencies": {
         "@playwright/test": "^1.51.1",
