@@ -176,21 +176,3 @@ function add(a, b) {
 
 const sum = add(5, 3); // sum = 8
 ```
-
-### Arrow Function
-
-```js
-const multiply = (a, b) => a * b;
-console.log(multiply(2, 3)); // 6
-```
-
-### Function với tham số mặc định
-
-```js
-function greet(name = 'Guest') {
-    return `Hello ${name}!`;
-}
-
-console.log(greet()); // "Hello Guest!"
-console.log(greet('Khoa')); // "Hello Khoa!"
-```
