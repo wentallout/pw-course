@@ -55,8 +55,6 @@ function getTopStudents(students, threshold) {
     return topStudents;
 }
 
-getTopStudents(studentsArr, schoolThreshold);
-
 console.log(getTopStudents(studentsArr, schoolThreshold));
 
 /* ex4: Viết hàm calculateInterest nhận 3 tham số:
