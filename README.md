@@ -68,3 +68,43 @@ The project is configured to run tests:
 -   With trace capture on first retry
 
 See `playwright.config.ts` for detailed configuration options.
+
+
+##
+
+### Mutating Methods (modify original array):
+- push() - adds to end
+- pop() - removes from end
+- unshift() - adds to beginning
+- shift() - removes from beginning
+- splice() - adds/removes elements anywhere
+- reverse() - reverses array
+- sort() - sorts array
+- fill() - fills elements with value
+
+Methods thêm/xóa ở đầu/cuối:
+Thêm (push, unshift) → return độ dài mới
+Xóa (pop, shift) → return phần tử bị xóa
+Method thêm/xóa ở giữa:
+splice → return mảng các phần tử bị xóa
+Methods biến đổi toàn bộ mảng:
+reverse, sort, fill → return chính mảng đã biến đổi
+
+### Non-Mutating Methods (return new array, original unchanged):
+
+map() - transforms elements
+filter() - filters elements
+concat() - combines arrays
+slice() - extracts portion of array
+join() - creates string from array
+reduce() - reduces to single value
+forEach() - just loops, returns nothing
+indexOf() - finds index
+includes() - checks if element exists
+find() - finds element
+findIndex() - finds element index
+some() - checks if some pass test
+every() - checks if all pass test
+
+
+
