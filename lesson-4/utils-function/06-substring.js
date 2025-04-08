@@ -2,12 +2,12 @@
 // remember it stops right before the endIndex.
 
 const fullName = 'Nguyễn Văn A';
+const date = '2024-05-19';
 
 const lastName = fullName.substring(0, 6); // 1. Trích xuất họ từ fullName (từ đầu đến ký tự thứ 6). Might be bad solution
 
 console.log(lastName); // Nguyễn
 
-const date = '2024-05-19';
 const year = date.substring(0, 4); // 2. Trích xuất năm từ date (4 ký tự đầu).
 
 console.log(year); //2024

@@ -1,39 +1,72 @@
 str = 'Playwright';
-dupArr = [1, 2, 3, 1, 2, 4, 5];
 arr = [1, 2, 3, 4, 3, 55, 23];
+dupArr = [1, 2, 3, 1, 2, 4, 5];
 
 // 2.1 In lần lượt từng ký tự của str
 
-for (let i of str) {
-    console.log(i);
+function printAllCharFromString(str) {
+    for (let char of str) {
+        console.log(char);
+    }
 }
 
-// Tạo mảng đảo ngược từ str
-let reversedStr = [];
+// 2.2 Tạo mảng đảo ngược từ str
 
-for (let char of str) {
-    reversedStr.unshift(char);
+function createReversedArrFromString(str) {
+    let reverse = [];
+    for (let char of str) {
+        reverse.unshift(char);
+    }
+
+    return reverse;
 }
 
-// Tìm và in vị trí đầu tiên và cuối cùng của giá trị 3 trong arr
+// 2.3 Tìm và in vị trí đầu tiên và cuối cùng của giá trị 3 trong arr
 
-// NOTE: hiện tại xài tạm indexOf vì không biết xài for of thế nào mà tìm được
+function printFirstAndLastIndexOfAValueInArray(searchValue, arr) {
+    let lastValueIndex = -1;
+    let firstValueIndex = -1;
+    let currentIndex = 0;
 
-const firstIndex = arr.indexOf(3);
-const lastIndex = arr.lastIndexOf(3);
+    for (let value of arr) {
+        if (value === searchValue) {
+            if (firstValueIndex === -1) {
+                firstValueIndex = currentIndex;
+            }
+            lastValueIndex = currentIndex;
+        }
 
-// Lọc các phần tử xuất hiện 1 lần trong dupArr
+        currentIndex++;
+    }
 
-let uniqueElements = [];
-for (let num of dupArr) {
-    count = 0;
-    for (let checkNum of dupArr) {
-        if (num === checkNum) {
-            count++;
+    console.log(`First value index: ${firstValueIndex}; Last value index: ${lastValueIndex}`);
+}
+
+// 2.4 Lọc các phần tử xuất hiện 1 lần trong dupArr
+
+function findElementsThatOnlyAppearOnce(arr) {
+    let result = [];
+
+    for (let value of arr) {
+        let count = 0;
+
+        for (let item of arr) {
+            if (item === value) {
+                count++;
+            }
+        }
+
+        if (count === 1) {
+            result.push(value);
         }
     }
 
-    if (count === 1) {
-        uniqueElements.push(num);
-    }
+    return result;
 }
+
+// Test run
+
+printAllCharFromString(str);
+console.log(createReversedArrFromString(str));
+printFirstAndLastIndexOfAValueInArray(3, arr);
+console.log(findElementsThatOnlyAppearOnce(dupArr));

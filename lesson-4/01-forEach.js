@@ -1,61 +1,62 @@
 const numbers = [1, 2, 3];
-const str = 'Playwright';
-const student = { name: 'Alex', age: 10, salary: 20 };
-const arr = [1, 2, 3, 4, 3, 55, 23];
-const dupArr = [1, 2, 3, 1, 2, 4, 5];
 
-//NOTE: foreach không trả về giá trị gì hết, ofreach thật ra là 1 hành động thôi
+// 1.1 In lần lượt từng phần tử của numbers.
 
-// in lần lượt từng phần tử của numbers
+function printEveryNumbers() {
+    numbers.forEach((value) => {
+        console.log(value);
+    });
+}
 
-numbers.forEach((value) => {
-    console.log(value);
-});
+// 1.2 Tính tổng, tìm giá trị lớn nhất và nhỏ nhất của numbers
 
-//Tính tổng của numbers
+function getSum() {
+    let sum = 0;
+    numbers.forEach((value) => {
+        sum = sum + value;
+        return sum;
+    });
 
-let sum = 0;
-numbers.forEach((value) => {
-    sum = sum + value;
-});
+    return sum;
+}
 
-// const sum = numbers.reduce((acc, curr) => {
-//     return acc + curr;
-// });
+function getMaxOfArr(arr) {
+    let max = arr[0];
+    arr.forEach((value) => {
+        if (value >= max) {
+            max = value;
+        }
+        return max;
+    });
 
-console.log('Sum of numbers array:' + sum);
+    return max;
+}
+function getMinOfArr(arr) {
+    let min = arr[0];
+    arr.forEach((value) => {
+        if (value <= min) {
+            min = value;
+        }
+        return min;
+    });
 
-// tìm giá trị lớn nhất và nhỏ nhất của numbers
+    return min;
+}
 
-// NOTE: hơi khó hiểu vì acc là giá trị đầu tiên trong iteration 1, nhưng mà curr là giá trị sau acc vì nó bắt đầu iterate từ element thứ 2
+// 1.3 Tạo mảng mới từ numbers, mỗi phần tử nhân đôi
 
-const maxNum = numbers.reduce((acc, curr) => {
-    if (curr > acc) {
-        return curr;
-    } else {
-        return acc;
-    }
-});
+function createNewDoubledArray(arr) {
+    let doubledArr = [];
 
-// STEP 1: acc: 1 , curr: 2
-// STEP 2: acc: 2 , curr: 3
+    arr.forEach((value) => {
+        return doubledArr.push(value * 2);
+    });
 
-console.log('Max num is:' + maxNum);
+    return doubledArr;
+}
 
-const minNum = numbers.reduce((acc, curr) => {
-    if (curr < acc) {
-        return curr;
-    } else {
-        return acc;
-    }
-});
-
-console.log('Min num is:' + minNum);
-
-// make a new array, each value of that array is doubled
-
-const newNumArr = numbers.map((val, index) => {
-    return (val = val * 2);
-});
-
-console.log('new array is doubled: ' + newNumArr);
+printEveryNumbers();
+console.log(getSum()); //6
+console.log(getMaxOfArr(numbers)); //3
+console.log(getMinOfArr(numbers)); //1
+console.log(createNewDoubledArray(numbers)); // [2,4,6]

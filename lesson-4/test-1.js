@@ -50,7 +50,7 @@ function returnToEarth() {
 
 // Test all functions
 console.log(launchShip(crew));
-console.log(calculateDistanceInKilometers(1000, 24));
-console.log(convertTimeToHex(120));
-console.log(decryptCode(code));
-returnToEarth();
+console.log(calculateDistanceInKilometers(1000, 24)); //24000
+console.log(convertTimeToHex(120)); //78
+console.log(decryptCode(code)); //k13 cHALLENGE
+returnToEarth(); //Chuẩn bị trở về Trái Đất!

@@ -1,30 +1,36 @@
 const student = { name: 'Alex', age: 10, salary: 20 };
-// for...in làm cái gì? for in lặp qua các key của một object
 
 // 3.1 In tên và giá trị mỗi thuộc tính của student
 
-for (let keyStu in student) {
-    console.log(keyStu + ': ' + student[keyStu]);
+function printEveryAttributesOfObj(obj) {
+    for (let key in obj) {
+        console.log(`${key}: ${student[key]}`);
+    }
 }
 
 // 3.2 Tính tổng các giá trị số trong student
 
-let sum = 0;
-
-for (let keyStu in student) {
-    if (typeof student[keyStu] === 'number') {
-        sum = sum + student[keyStu];
+function sumOfAllNumbersInObj(obj) {
+    let sum = 0;
+    for (let key in obj) {
+        if (typeof obj[key] === 'number') {
+            sum = sum + obj[key];
+        }
     }
+    return sum;
 }
-
-console.log('Sum of numbers in student:', sum);
 
 // 3.3 Tạo mảng chứa tên các thuộc tính của student
 
-let sumArr = [];
-
-for (let keyStu in student) {
-    sumArr.push(keyStu);
+function getArrOfObjAttributes(obj) {
+    let arrOfAttributes = [];
+    for (let key in obj) {
+        arr.push(key);
+    }
+    return arrOfAttributes;
 }
 
-console.log(sumArr);
+// Test run
+printEveryAttributesOfObj(student);
+console.log(sumOfAllNumbersInObj(student));
+console.log(getArrOfObjAttributes(student));
