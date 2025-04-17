@@ -1,5 +1,6 @@
 // NOTE: The endIndex in substring() is exclusive, meaning it stops right before that index.
 // remember it stops right before the endIndex.
+// all string methods return a new string and doesn't modify the original
 
 const fullName = 'Nguyễn Văn A';
 const date = '2024-05-19';
