@@ -14,7 +14,6 @@ function getSum() {
     let sum = 0;
     numbers.forEach((value) => {
         sum = sum + value;
-        return sum;
     });
 
     return sum;
