@@ -4,7 +4,7 @@ const student = { name: 'Alex', age: 10, salary: 20 };
 
 function printEveryAttributesOfObj(obj) {
     for (let key in obj) {
-        console.log(`${key}: ${student[key]}`);
+        console.log(`${key}: ${obj[key]}`);  // Fixed: use obj parameter
     }
 }
 
@@ -25,12 +25,12 @@ function sumOfAllNumbersInObj(obj) {
 function getArrOfObjAttributes(obj) {
     let arrOfAttributes = [];
     for (let key in obj) {
-        arr.push(key);
+        arrOfAttributes.push(key);  // Fixed: use correct array name
     }
     return arrOfAttributes;
 }
 
 // Test run
-printEveryAttributesOfObj(student);
-console.log(sumOfAllNumbersInObj(student));
-console.log(getArrOfObjAttributes(student));
+printEveryAttributesOfObj(student);  // name: Alex, age: 10, salary: 20
+console.log(sumOfAllNumbersInObj(student));  // 30 (10 + 20)
+console.log(getArrOfObjAttributes(student));  // ['name', 'age', 'salary']

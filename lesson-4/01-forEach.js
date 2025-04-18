@@ -25,18 +25,17 @@ function getMaxOfArr(arr) {
         if (value >= max) {
             max = value;
         }
-        return max;
     });
 
     return max;
 }
+
 function getMinOfArr(arr) {
     let min = arr[0];
     arr.forEach((value) => {
         if (value <= min) {
             min = value;
         }
-        return min;
     });
 
     return min;
@@ -48,7 +47,7 @@ function createNewDoubledArray(arr) {
     let doubledArr = [];
 
     arr.forEach((value) => {
-        return doubledArr.push(value * 2);
+        doubledArr.push(value * 2);
     });
 
     return doubledArr;

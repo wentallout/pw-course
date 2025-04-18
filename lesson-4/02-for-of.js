@@ -45,18 +45,25 @@ function printFirstAndLastIndexOfAValueInArray(searchValue, arr) {
 // 2.4 Lọc các phần tử xuất hiện 1 lần trong dupArr
 
 function findElementsThatOnlyAppearOnce(arr) {
+    // tạo object để lưu count
+    let countObj = {};
+
+    for (let value of arr) {
+        if (countObj[value]) {
+            // Nếu đã tồn tại, tăng count lên 1
+            countObj[value] = countObj[value] + 1;
+        } else {
+            // Nếu chưa tồn tại, khởi tạo count = 1
+            countObj[value] = 1;
+        }
+    }
+
+    console.log(countObj); // {1: 2, 2: 2, 3: 1, 4: 1, 5: 1} Ta thấy số 3,4,5 xuất hiện 1 lần
+
     let result = [];
 
     for (let value of arr) {
-        let count = 0;
-
-        for (let item of arr) {
-            if (item === value) {
-                count++;
-            }
-        }
-
-        if (count === 1) {
+        if (countObj[value] === 1) {
             result.push(value);
         }
     }
