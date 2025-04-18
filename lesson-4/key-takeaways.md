@@ -1,4 +1,37 @@
-# Lesson 4: JavaScript Utils Functions
+## Scope
+
+Scope la khu vuc hoat dong cua biến (thuong nam trong `{}`)
+
+If your code is outside `{}`, your code is in the global scope.
+
+## If...else
+
+```js
+if (condition) {
+    // code block 1
+} else {
+    // code block 2
+}
+```
+
+## switch...case
+
+```js
+Cú pháp switch...case:
+switch (condition) {
+case "<case_value_1>":
+// code block 1
+break;
+case "<case_value_2>":
+// code block 2
+break;
+case "<case_value_3>":
+// code block 3
+break;
+default:
+// code block 4
+}
+```
 
 ## String Utils (Xử lý chuỗi)
 
