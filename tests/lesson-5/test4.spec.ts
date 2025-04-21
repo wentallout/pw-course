@@ -69,6 +69,7 @@ test('Test personal notes', async ({ page }) => {
         await page.locator('a[href="04-xpath-personal-notes.html"]').click();
     });
 
+    //DO NOT USE forEach, it mess up async await
     await test.step('add notes', async () => {
         for (const article of scienceArticles) {
             await page.locator('input#note-title').fill(article.title);

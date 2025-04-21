@@ -12,6 +12,8 @@ test('Check product page', async ({ page }) => {
 
     await test.step('test todo features', async () => {
         // Add todos
+
+        //DO NOT USE forEach, it mess up async await?
         for (let i = 0; i < 100; i++) {
             await page.locator('input#new-task').fill(`todo ${i}`);
             await page.locator('button#add-task').click();
