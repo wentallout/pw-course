@@ -36,10 +36,21 @@ test step needs to be map 1-1 with test case for easier maintain.
 
 ### goto
 
-`test.goto('https://google.com')`
+```js
+await test.goto('https://google.com');
+```
 
 ### locator
 
 ```js
-page.locator('//input').fill('Playwright Viet Nam');
+await page.locator('//input').fill('Playwright Viet Nam');
 ```
+
+## Strange case when using async/await with forEach
+
+In conclusion, using "async/await" with "forEach" in JavaScript is a common misconception. The problem is that people
+are misunderstanding how "await" works and think that by using "async" on the callback function passed to "forEach",
+they are making that function asynchronous. However, the callback function is still synchronous and "await" does not
+work inside of it. To fix this problem, we can use a regular "for" loop or the "map" method with "Promise.all" to wait
+for all the promises to complete. I hope this article has helped clear up any confusion and you now have a better
+understanding of how "async/await" and "forEach" work in JavaScript.

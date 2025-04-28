@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import path from 'path';
 
-test('1. Check register page', async ({ page }) => {
+test('Check register page', async ({ page }) => {
     await test.step('click button to access register page', async () => {
         await page.goto('https://material.playwrightvn.com');
         await page.locator('a[href="01-xpath-register-page.html"]').click();
@@ -12,7 +12,7 @@ test('1. Check register page', async ({ page }) => {
 
         await page.locator('input#email').fill('khoanguyen123@gmail.com');
 
-        await page.locator('input[type="radio"][name="gender"][value="male"]').check();
+        await page.locator('input[type="radio"][value="male"]').check();
 
         await page.locator('input[type="checkbox"][name="hobbies"][value="reading"]').check();
 
@@ -30,7 +30,6 @@ test('1. Check register page', async ({ page }) => {
 
         await page.locator('input#rating').fill('8');
 
-        // need more info, cant test this right now
         await page.locator('input#favcolor').evaluate((el: HTMLInputElement) => {
             el.value = '#ffffff';
         });
